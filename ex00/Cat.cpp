@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:20:37 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 11:05:08 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:02:05 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Cat::Cat( const Cat &other)
 Cat& Cat :: operator=(const Cat& other) 
 {
     std::cout <<"Cat 's Copy assignment operator called \n";
-    type = other.type;
+    if(this != &other)
+        type = other.type;
     return *this;
 }
 void Cat:: makeSound()const

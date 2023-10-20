@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:24:02 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 11:06:19 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:02:53 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ Dog::Dog( const Dog &other)
 Dog& Dog :: operator=(const Dog& other) 
 {
     std::cout <<"Dog 's Copy assignment operator called \n";
-    type = other.type;
+    if(this != &other)
+        type = other.type;
     return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:10:59 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 11:18:30 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:01:52 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ Animal::Animal( const Animal &other)
 Animal& Animal :: operator=(const Animal& other) 
 {
     std::cout <<"Copy assignment operator called \n";
-    type = other.type;
+    if(this != &other)
+        type = other.type;
     return *this;
 }
 

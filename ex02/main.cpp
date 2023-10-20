@@ -6,22 +6,28 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:40:54 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 14:36:39 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:40:31 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "Animal.hpp"
 
 int main()
 {
-    Animal *array[4];
+    // Attempt to create an instance of the abstract class - will not compile
+    // Animal animal; 
+    // error: variable type 'Animal' is an abstract class
    
-    for (int i = 0; i < 2 ;i++)
-        array[i] = new Dog();
-    for (int i = 2 ; i < 4 ; i++)
-        array[i] = new Cat();
-    for( int j = 0;  j < 4 ;j++)
-        delete array[j];
-return 0;
+    // Create an instance of the derived class
+   {
+        Dog dog;
+
+        dog.setType("Golden Retriever");
+        std::cout << "Type: " << dog.getType() << std::endl;
+        dog.makeSound();
+   }
+    //system("leaks a.out");
+    return 0;
 }

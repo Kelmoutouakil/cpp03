@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 19:08:14 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 10:43:05 by kelmouto         ###   ########.fr       */
+/*   Created: 2023/10/20 10:53:36 by kelmouto          #+#    #+#             */
+/*   Updated: 2023/10/20 13:25:12 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP 
-#include<iostream>
-class Animal
-{
-    protected:
-        std::string type;
-    public :
-        Animal();
-        Animal (const  Animal &other);
-       Animal&  operator=(const Animal& other);
-       void  setType(std::string h);
-       std::string getType()const;
-        virtual void makeSound()const = 0;
-        virtual ~Animal();
-};
+#include "AMateria.hpp"
 
-#endif
+AMateria :: AMateria(std::string const& h) : type(h)
+{
+    std::cout<<" Ameteria 's constructor called"<< std::endl;
+}
+
+std::string const & AMateria::getType() const
+{
+    return (type);
+}//Returns the materia type
+
+void AMateria:: use(ICharacter& target)
+{
+    std::cout<< "* not define for amateria at " << target.getName()<<std::endl;
+}

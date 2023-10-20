@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 19:08:14 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 10:43:05 by kelmouto         ###   ########.fr       */
+/*   Created: 2023/10/20 11:37:42 by kelmouto          #+#    #+#             */
+/*   Updated: 2023/10/20 11:41:31 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP 
-#include<iostream>
-class Animal
-{
-    protected:
-        std::string type;
-    public :
-        Animal();
-        Animal (const  Animal &other);
-       Animal&  operator=(const Animal& other);
-       void  setType(std::string h);
-       std::string getType()const;
-        virtual void makeSound()const = 0;
-        virtual ~Animal();
-};
 
-#endif
+#include "Cure.hpp"
+
+Cure :: Cure(std::string const & type) : AMateria("cure")
+{
+    std::cout<< "Cure 's constructor called"<<std::endl;
+}
+
+void Cure :: use(ICharacter& target)
+{
+    std::cout << " * heals "<< target.getName() << "’s wounds *" << std::endl;
+}
+
+Cure * Cure:: clone() const
+{
+    Cure * N = new Cure(type);
+    if(!N)
+        return NULL;
+    return(N);
+}

@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 19:08:14 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 10:43:05 by kelmouto         ###   ########.fr       */
+/*   Created: 2023/10/20 13:38:16 by kelmouto          #+#    #+#             */
+/*   Updated: 2023/10/20 14:04:19 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP 
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP 
 #include<iostream>
-class Animal
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
+
+class MateriaSource : public IMateriaSource
 {
-    protected:
-        std::string type;
-    public :
-        Animal();
-        Animal (const  Animal &other);
-       Animal&  operator=(const Animal& other);
-       void  setType(std::string h);
-       std::string getType()const;
-        virtual void makeSound()const = 0;
-        virtual ~Animal();
+    private :
+       AMateria *learnMaterias[4];
+    public:
+    ~MateriaSource() {}
+    void learnMateria(AMateria*);
+    AMateria* createMateria(std::string const & type) ;
 };
 
 #endif

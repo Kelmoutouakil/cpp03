@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 19:08:14 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 10:43:05 by kelmouto         ###   ########.fr       */
+/*   Created: 2023/10/20 11:21:28 by kelmouto          #+#    #+#             */
+/*   Updated: 2023/10/20 11:36:26 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP 
-#include<iostream>
-class Animal
-{
-    protected:
-        std::string type;
-    public :
-        Animal();
-        Animal (const  Animal &other);
-       Animal&  operator=(const Animal& other);
-       void  setType(std::string h);
-       std::string getType()const;
-        virtual void makeSound()const = 0;
-        virtual ~Animal();
-};
+#include "Ice.hpp"
 
-#endif
+Ice :: Ice(std::string const & type) : AMateria("ice")
+{
+    std::cout<< "Ice 's constructor called"<<std::endl;
+}
+
+void Ice :: use(ICharacter& target)
+{
+    std::cout << " * shoots an ice bolt at "<< target.getName() << " *" << std::endl;
+}
+
+Ice * Ice:: clone() const
+{
+    Ice * N = new Ice(type);
+    if(!N)
+        return NULL;
+    return(N);
+}

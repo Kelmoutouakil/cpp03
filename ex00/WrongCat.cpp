@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:32:51 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 11:34:24 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:03:36 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ WrongCat::WrongCat( const WrongCat &other)
 WrongCat& WrongCat :: operator=(const WrongCat& other) 
 {
     std::cout <<"WrongCat 's Copy assignment operator called \n";
-    type = other.type;
+    if(this != &other)
+        type = other.type;
     return *this;
 }
 void WrongCat:: makeSound()const
