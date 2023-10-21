@@ -1,18 +1,19 @@
 CC = c++
 NAME = a.out
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 
 SRC = $(wildcard *.cpp)
 HEADER =$(wildcard *.hpp)
 
 OBJ = $(SRC:.cpp=.o)
 
+
 all: $(NAME)
 $(NAME): $(OBJ) $(HEADER)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 %.o:%.cpp
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) $(CPPFLAGS) -c -o $@ $^
 
 clean:
 	rm -f $(OBJ)

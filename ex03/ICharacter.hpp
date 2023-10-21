@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:55:20 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 11:19:16 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:06:34 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define ICHARACTER_HPP
 #include <iostream>
 #include "AMateria.hpp"
-
 class ICharacter
 {
     public:

@@ -6,27 +6,34 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:37:42 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 11:41:31 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:31:07 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Cure.hpp"
 
-Cure :: Cure(std::string const & type) : AMateria("cure")
+Cure :: Cure() 
 {
+    type = "cure";
     std::cout<< "Cure 's constructor called"<<std::endl;
 }
 
 void Cure :: use(ICharacter& target)
 {
-    std::cout << " * heals "<< target.getName() << "’s wounds *" << std::endl;
+    
+    std::cout << " * shoots an Cure bolt at "<< target.getName() << " *" << std::endl;
 }
 
 Cure * Cure:: clone() const
 {
-    Cure * N = new Cure(type);
+    Cure * N = new Cure();
+
     if(!N)
         return NULL;
     return(N);
+}
+Cure ::~ Cure()
+{
+    std::cout<<" Cure 's destructor is called" << std::endl;
 }
