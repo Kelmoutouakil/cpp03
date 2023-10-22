@@ -21,9 +21,11 @@ class AMateria
         std::string  type;
     public:
     AMateria(){}
-    AMateria(std::string   h);
+    AMateria(std::string const&  h);
     virtual ~AMateria();
-    std::string const & getType() const; //Returns the materia type
+    std::string const & getType() const;
+    AMateria( const AMateria &other);
+    AMateria&  operator=(const AMateria& other) ; 
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
 };

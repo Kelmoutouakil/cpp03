@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:10:59 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/20 10:01:52 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/22 09:53:12 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal:: Animal(std::string h)
 
 Animal :: ~Animal()
 {
-    std::cout << "destructor called\n";
+    std::cout << " Animal 's destructor called\n";
 }
 
 Animal::Animal( const Animal &other)

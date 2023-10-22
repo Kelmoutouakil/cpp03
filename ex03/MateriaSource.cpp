@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:38:39 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/21 13:52:10 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:01:29 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void MateriaSource :: learnMateria(AMateria * materia)
         if(learnMaterias[i] == NULL)
         {
             learnMaterias[i] = materia->clone();
-std::cout<<"heloooo\n"<< learnMaterias[i]->getType();
-            
+            delete materia;
             return;
         }
     }
@@ -63,7 +62,6 @@ AMateria*  MateriaSource:: createMateria(std::string const & type)
 {
     for(int i = 0; i< 4;i++)
     {
-
         if(learnMaterias[i] && learnMaterias[i]->getType() == type)
         {
             return(learnMaterias[i]->clone());

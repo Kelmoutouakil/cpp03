@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:25:09 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/19 11:05:36 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/22 09:54:16 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Dog : public Animal
         Dog();
         Dog(std::string h);
         Dog (const  Dog &other);
-       Dog&  operator=(const Dog& other);
-       void makeSound()const;
+        Dog&  operator=(const Dog& other);
+        void makeSound()const;
         ~Dog();
 };
 

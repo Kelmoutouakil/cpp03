@@ -6,7 +6,7 @@
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:50:18 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/21 13:53:30 by kelmouto         ###   ########.fr       */
+/*   Updated: 2023/10/22 14:35:30 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 #include <iostream>
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include"StructC.hpp"
+
 class Character : public ICharacter
 {
     private :
         std::string name;
         AMateria* inventory[4];
-        AMateria *temp;
+        t_data *data ;
     public:
        ~Character();
        Character();
-        Character(std::string  n);
+        Character(std::string const&  n);
         Character(const Character& other);
         Character& operator=(const Character& other);
         std::string const & getName() const ;

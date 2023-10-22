@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   structC.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kelmouto <kelmouto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 19:40:54 by kelmouto          #+#    #+#             */
-/*   Updated: 2023/10/22 10:39:42 by kelmouto         ###   ########.fr       */
+/*   Created: 2023/10/22 13:33:55 by kelmouto          #+#    #+#             */
+/*   Updated: 2023/10/22 14:44:00 by kelmouto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-int main()
-{
+#ifndef STRUCTC_HPP
+#define STRUCTC_HPP
+#include "AMateria.hpp"
 
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-delete i;
-delete j;
-delete meta;
-return 0;
-}
+ typedef struct s_data
+ {
+    AMateria *buff;
+    struct s_data *next;
+    s_data();
+    ~s_data();
+ } t_data;
+ 
+t_data *lstnew(AMateria *data);
+void Lstaddmateria(t_data **lst, t_data *materia);
+#endif
